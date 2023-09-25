@@ -80,6 +80,9 @@ Shorten_path
 
 \\Code{
 Main
+
+Initialise \\Ref Initialise
+
 Union(n, m) // merge/union the subsets containing n and m, respectively \\B Union(n, m)
 \\In{
     n <- Find(n) \\B n <- Find(n)
@@ -118,6 +121,10 @@ Find(n) // return root of tree containing n \\B Find(n)
     return n // return root \\B return n
 \\In} 
 \\Code}
+\\Note{ Could keep tree representation more abstract but I think its
+  best to be up-front with array representation and how roots
+  are distinguished
+\\Note}
 
 \\Code{
 Maybe_swap
@@ -145,11 +152,11 @@ Adjust_rank
 \\Note{ Should we use ++ or "increment"???
 \\Note}
 
+\\Note{ No need to animate this?? We just have this as the initial
+  state of the animation.
+\\Note}
 \\Code{
 Initialise
-    \\Note{ No need to animate this?? We just have this as the initial
-        state of the animation.
-    \\Note}
       parent[i] = i and rank[i] = 0 for all elements i in the set \\B parent[i] = i and rank[i] = 0 for all elements i in the set
     \\Expl{ Initially, each element i is in its own singleton subset. If
             the array has free space, extra elements can be added and
