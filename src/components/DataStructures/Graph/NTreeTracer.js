@@ -160,12 +160,13 @@ class NTreeTracer extends Tracer {
   getNTree() {
     // this will be the theoretical root node, and the handle for the tree
     const nodeMap = {};
-    const rootNodes = new Set(this.realNodes.map((node) => node.id));
-    if (this.realNodes.length === 0) {
+    const rootNodes = new Set(this.realNodes.map(node => node.id));
+    if (this.realNodes.length === 0){
       return null;
+
     }
-    // create the TreeNode instances and map them by their ID
-    this.realNodes.forEach((node) => {
+    // Create the TreeNode instances and map them by their ID.
+    this.realNodes.forEach(node => {
       let treeNode;
       if (this.variableNodes) {
         treeNode = new VariableTreeNode(node.id);

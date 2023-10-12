@@ -19,22 +19,22 @@ class VariableTreeNode extends TreeNode {
       return;
     }
 
-    this.relatedNodeIDs.push(nodeID);
-    this.relatedNodeIDs.sort((a, b) => a - b);
-  }
-
-  removeRelatedNodeID(nodeID) {
-    const index = this.relatedNodeIDs.indexOf(nodeID);
-    if (index !== -1) {
-      this.relatedNodeIDs.splice(index, 1);
+        this.relatedNodeIDs.push(nodeID);
+        this.relatedNodeIDs.sort((a, b) => a - b);
     }
-  }
-  clearRelatedNodeIDs() {
-    this.relatedNodeIDs = [];
-  }
-  getNodeLength() {
-    return this.relatedNodeIDs.length;
-  }
+
+    removeRelatedNodeID(nodeID) {
+        const index = this.relatedNodeIDs.indexOf(nodeID);
+        if (index !== -1) {
+            this.relatedNodeIDs.splice(index, 1);
+        }
+    }
+    clearRelatedNodeIDs(){
+        this.relatedNodeIDs = [];
+    }
+    getNodeLength() {
+        return this.relatedNodeIDs.length;
+    }
 
   hasRelatedNodeID(nodeID) {
     return this.relatedNodeIDs.includes(nodeID);
