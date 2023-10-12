@@ -160,13 +160,12 @@ class NTreeTracer extends Tracer {
   getNTree() {
     // this will be the theoretical root node, and the handle for the tree
     const nodeMap = {};
-    const rootNodes = new Set(this.realNodes.map(node => node.id));
-    if (this.realNodes.length === 0){
+    const rootNodes = new Set(this.realNodes.map((node) => node.id));
+    if (this.realNodes.length === 0) {
       return null;
-
     }
-    // Create the TreeNode instances and map them by their ID.
-    this.realNodes.forEach(node => {
+    // create the TreeNode instances and map them by their ID
+    this.realNodes.forEach((node) => {
       let treeNode;
       if (this.variableNodes) {
         treeNode = new VariableTreeNode(node.id);
@@ -258,7 +257,7 @@ class NTreeTracer extends Tracer {
         edge.source = node1.id;
       }
 
-      // Swap targets
+      // swap targets
       if (edge.target === node1.id) {
         edge.target = node2.id;
       } else if (edge.target === node2.id) {
@@ -292,7 +291,7 @@ class NTreeTracer extends Tracer {
   }
 
   isParent(parent, child) {
-    // This function will check if parent is actually a parent of child node
+    // this function will check if parent is actually a parent of child node
     for (const edge of this.realEdges) {
       if (edge.source === parent && edge.target === child) {
         return true;
